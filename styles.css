@@ -1,0 +1,172 @@
+.content {
+    max-width: 960px;
+    margin: 0 auto;
+    border-left: 2px #ddd solid;
+}
+.content *{
+    margin-left: 50px;
+}
+.profile{
+    width: 40vh;
+    height: 40vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+    position: relative;
+    margin: auto;
+    display: block;
+  
+    border-radius: 50%;
+  }
+  html, body{
+      margin: 0;
+      padding: 0;
+  }
+  .PM body{
+      background-color: #f2f2f2;
+  }
+  
+  .left-bar{
+    position: absolute;
+    top: 60px;
+    height: 100vh;
+    width: 400px;
+    /*background-color:aquamarine;*/
+    /*background-image: linear-gradient(to right, aquamarine , #f2f2f2);*/
+    background-color: #f2f2f2;
+  }
+  .left-bar *{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    /*box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.3), 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.15);*/
+    /*background-color: #f2f2f2;*/
+    border-bottom: 2px solid #ddd;
+  }
+  /* .left-bar *:hover{
+    box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.04), 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.04);
+  } */
+  @media (max-width:1900px){
+    .left-bar{
+      width: 0px;
+    }
+  }
+  
+  .bg-image {
+    /* The image used */
+    background-image: url('../public/react-icon.svg');
+    
+    /* Add the blur effect */
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    
+    /* Full height */
+    height: 100vh;
+    width: 100vw;
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  
+  
+  .PM *{
+    animation-timing-function: ease-in-out;
+    animation-name: PM-Spawn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+  
+    /*border-bottom: 0.2rem solid grey;*/
+  }
+  
+  .about{
+    font-size: 1.25rem;
+    column-count: 3; column-gap: 40px;
+    column-rule-style: solid; column-rule-color: #ddd; column-rule-width: 2px;
+    margin-left: 50px; margin-right: 50px;
+  }
+  
+  .PM nav{
+    margin: 0px auto 80px;
+    padding: 0px 0px;
+    padding-right: 40px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border-bottom: 1px solid #ddd;
+    background-color: #f2f2f2;
+  
+    
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .PM nav a{
+    font-size: 1.25em;
+    text-align: center;
+  }
+  .PM nav div{
+    height: 100%;
+    padding-right: 10px; padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .PM nav div:hover{
+    background-color: #ddd;
+  }
+  
+  .grid-container {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    text-align: center;
+  }
+  .grid-item {
+    text-align: center;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.1);
+    /*border-bottom: 1rem solid seagreen;*/
+  }
+  .grid-item:hover{
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.3), 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.15);
+  }
+  .skills.grid-item{
+    width: 100px; height: 100px;
+    padding: 5rem 0rem;
+    margin-top: 0px;
+  }
+  .portfolio.grid-item{
+    width: 200px; height: 200px;
+    padding: 0rem 0rem;
+  }
+  
+  .PM h1{
+    text-align: left;
+    font-size: 2.4rem;
+    font-weight: 1;
+    color: rgb(65, 65, 65);
+    border-bottom: 2px solid #ddd;
+    margin-left: 30px;
+    margin-top: 50px;
+  }
+  
+  .PM h2{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 1;
+  }
+  
+  
+  @keyframes PM-Spawn {
+    0% {
+      transform: translate(0px, -50px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+  /* End Patrick page styling */
+  
