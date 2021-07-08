@@ -1,38 +1,102 @@
 <!DOCTYPE html>
-<html class = "PM">
-
+<html lang="en" class="PM">
+    <title> Patrick Morris' Personal Page</title>
 <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <nav className="PM">
-        <div className="PM"><Link href="/"><a>Home</a></Link></div>
-        <div className="PM"><Link href="/about"><a>About</a></Link></div>
-        <div className="PM"><Link href="/ninjas/"><a>Skills</a></Link></div>
-        <div className="PM"><Link href="/ninjas/"><a>Portfolio</a></Link></div>
+    <nav id="navbar" className="PM">
+        <div className="PM"><a href="#home">Home</a></div>
+        <div className="PM"><a href="#about">About</a></div>
+        <div className="PM"><a href="#tech-stack">Skills</a></div>
+        <div className="PM"><a href="#portfolio">Portfolio</a></div>
     </nav>
 
     <div class="left-bar">
-        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
-
-    <div class="content">
-        <img src="Patrick2.jpg" class="profile"></img>
-    </div>
-
-    <div class="content">
+    <section class="gear-container">
+        <img src="Gear.svg" alt="Gear" class="gear" style="left: 150px; top: -250px;">
+    </section>
+    <p class="name">
+        Patrick Morris
+    </p>
     
+
+    <section id="home" class="content">
+        <img src="Patrick2.jpg" alt="Picture of me" class="profile" onclick="myFunction('1 Parameter');">
+    </section>
+
+    <section id="about" class="content">
         <h1>About: </h1>
         <div class="about">
-            I am Patrick Morris: Indie Game Developer, Web Developer, Artist, Programmer, Gamer. I am a man of few words, so
-            I'll let my portfolio do most of the talking.
+            I am Patrick Morris: Indie Game Developer, Web Developer, Artist, Programmer, Gamer. I am not your average
+            developer... Lorem Ipsum delore blablabla
         </div>
-    
+    </section>
+
+    <section id="tech-stack" class="content">
         <h1>Tech Stack:</h1>
-    
+        <div class="skills grid-container">
+            <div>
+                <img src="React.svg" alt="React" className="PM skills grid-item"></img>
+                <p>React</p>
+            </div>
+            <div>
+                <img src="CSS3.svg" alt="CSS3" className="PM skills grid-item"></img>
+                <p>CSS3</p>
+            </div>
+            <div>
+                <img src="HTML5.svg" alt="HTML5" className="PM skills grid-item"></img>
+                <p>HTML5</p>
+             </div>
+            <div>
+                <img src="Nextjs.svg" alt="Next.js" className="PM skills grid-item"></img>
+                <p>Next.js</p>
+            </div>
+            <div>
+                <img src="JQuery.svg" alt="JQuery" className="PM skills grid-item"></img>
+                <p>JQuery</p>
+             </div>
+            <div>
+                <img src="JS.svg" alt="Java Script" className="PM skills grid-item"></img>
+                <p>Java Script</p>
+            </div>  
+        </div>
+    </section>
+
+    <section id="portfolio" class="content">
         <h1>Portfolio:</h1>
-    </div>
+        <section class="gear-container">
+            <img src="Gear.svg" alt="Gear" class="gear" style="left: 0px; bottom: 0px;">
+        </section>
+    </section>
+
+
+
+    <script>
+        function myFunction(message) {
+            alert(message);
+        }
+        
+        /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-60px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
 </body>
 
 </html>
