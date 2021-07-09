@@ -4,14 +4,18 @@
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="mask-icon" href="favicon.svg" color="#ff8a01">
 </head>
 
 <body>
     <nav id="navbar" className="PM">
-        <div className="PM"><a href="#home">Home</a></div>
-        <div className="PM"><a href="#about">About</a></div>
-        <div className="PM"><a href="#tech-stack">Skills</a></div>
-        <div className="PM"><a href="#portfolio">Portfolio</a></div>
+        <span className="PM"><a href="#home">Home</a></span>
+        <span className="PM"><a href="#about">About</a></span>
+        <span className="PM"><a href="#tech-stack">Skills</a></span>
+        <span className="PM"><a href="#portfolio">Portfolio</a></span>
+        <span className="PM hamburger"><a href="#home"><img src="Hamburger.svg" alt="Hamburger" style="width: 25px;"></a></span>
     </nav>
 
     <div class="left-bar">
@@ -71,11 +75,32 @@
         </div>
     </section>
 
+    
+    <section class="gear-container">
+        <img src="Gear.svg" alt="Gear" class="gear" style="left: 50px; top: -250px">
+        <img src="Gear.svg" alt="Gear" class="gear" style="right: -350px; top: -550px;">
+    </section>
+
     <section id="portfolio" class="content">
         <h1>Portfolio:</h1>
-        <section class="gear-container">
-            <img src="Gear.svg" alt="Gear" class="gear" style="left: 0px; bottom: 0px;">
-        </section>
+        <div class="skills grid-container" style="flex-direction: column;">
+            <div>
+                <img src="Gear.svg" alt="React" className="PM skills grid-item" style="background-color: #ddd;"></img>
+                <p>Portfolio Item 1</p>
+            </div>
+            <div>
+                <img src="Gear.svg" alt="React" className="PM skills grid-item" style="background-color: #ddd;"></img>
+                <p>Portfolio Item 1</p>
+            </div>
+            <div>
+                <img src="Gear.svg" alt="React" className="PM skills grid-item" style="background-color: #ddd;"></img>
+                <p>Portfolio Item 1</p>
+            </div>
+            <div>
+                <img src="Gear.svg" alt="React" className="PM skills grid-item" style="background-color: #ddd;"></img>
+                <p>Portfolio Item 1</p>
+            </div>
+        </div>
     </section>
 
 
@@ -86,6 +111,7 @@
         }
         
         /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+        /*
         var prevScrollpos = window.pageYOffset;
         window.onscroll = function () {
             var currentScrollPos = window.pageYOffset;
@@ -96,6 +122,7 @@
             }
             prevScrollpos = currentScrollPos;
         }
+        */
     </script>
 </body>
 

@@ -48,6 +48,7 @@ html, body{
 }
 .PM body{
   background-color: #f2f2f2;
+  overflow-x:hidden;
 }
 
 .left-bar{
@@ -82,19 +83,20 @@ html, body{
 }
 .gear-container .gear{
   position: absolute;
-  z-index: -1;
+  z-index: -10;
+  overflow: hidden;
 }
 .gear{
   transform-origin: middle;
   -webkit-filter: drop-shadow( 0px 0px 50px rgba(0, 0, 0, 0.15));
   filter: drop-shadow( 0px 0px 50px rgba(0, 0, 0, 0.15));
-  overflow: hidden;
   width: 500px;
 
   animation-name: Animation-Rotate;
   animation-timing-function:linear;
   animation-duration: 15s;
   animation-iteration-count: infinite;
+  overflow:hidden;
 }
 
 /* .PM *{
@@ -134,7 +136,7 @@ html, body{
   text-decoration: none;
   color: rgb(65, 65, 65);
 }
-.PM nav div{
+.PM nav span{
   height: 100%;
   padding-right: 0.5em; padding-left: 0.5em;
   display: flex;
@@ -142,8 +144,21 @@ html, body{
   align-items: center;
   /*border-left: solid 1px #ddd;*/
 }
-.PM nav div:hover{
+.PM nav span:hover{
   background-color: #ddd;
+}
+
+@media (max-width:1300px){
+  nav *{
+    font-size: 0px;
+    padding: 0px;
+  }
+  nav {
+    padding: 0px;
+  }
+  .hamburger{
+    padding-right: 0.5em; padding-left: 0.5em;
+  }
 }
 
 .grid-container {
@@ -165,6 +180,7 @@ html, body{
 .grid-container > *{
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.1);
   margin: 10px;
+  background-color: #f2f2f2;
   /*border-bottom: 1rem solid seagreen;*/
 }
 .skills.grid-container img{
