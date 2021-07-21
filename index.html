@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en" class="PM">
     <title> Patrick Morris' Personal Page</title>
 <head>
@@ -18,23 +19,23 @@
         <span class="PM hamburger"><a href="#home"><img src="Hamburger.svg" alt="Hamburger" style="width: 25px;"></a></span>
     </nav>
 
-    <div class="left-bar">
+    <aside class="left-bar">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
         <div></div>
-    </div>
-    <section class="gear-container">
+    </aside>
+    <aside class="gear-container">
         <img src="Gear.svg" alt="Gear" class="gear" style="left: 150px; top: -250px;">
-    </section>
+    </aside>
     <p class="name">
         Patrick Morris
     </p>
     
 
     <section id="home" class="content">
-        <img src="Patrick2.jpg" alt="Picture of me" class="profile" onclick="myFunction('1 Parameter');">
+        <img src="Patrick2.jpg" alt="Picture of me" class="profile" onclick=getRepos()>
     </section>
 
     <section id="about" class="content">
@@ -71,45 +72,42 @@
             <div>
                 <img src="JS.svg" alt="Java Script" class="PM skills grid-item"></img>
                 <p>Java Script</p>
-            </div>  
+            </div>
+            <div>
+                <img src="Git.svg" alt="Git" class="PM skills grid-item"></img>
+                <p>Git</p>
+            </div>
+            <div>
+                <img src="Github.svg" alt="Github" class="PM skills grid-item"></img>
+                <p>Github</p>
+            </div>      
         </div>
     </section>
 
     
-    <section class="gear-container">
+    <aside class="gear-container">
         <img src="Gear.svg" alt="Gear" class="gear" style="left: 50px; top: -250px">
         <img src="Gear.svg" alt="Gear" class="gear" style="right: -350px; top: -550px;">
-    </section>
+        <br><br><br><br><br><br><br><br>
+    </aside>
 
-    <section id="portfolio" class="content">
-        <h1>Portfolio:</h1>
-        <div class="skills grid-container" style="flex-direction: column;">
-            <div>
-                <img src="Gear.svg" alt="React" class="PM skills grid-item" style="background-color: #ddd;"></img>
-                <p>Portfolio Item 1</p>
-            </div>
-            <div>
-                <img src="Gear.svg" alt="React" class="PM skills grid-item" style="background-color: #ddd;"></img>
-                <p>Portfolio Item 1</p>
-            </div>
-            <div>
-                <img src="Gear.svg" alt="React" class="PM skills grid-item" style="background-color: #ddd;"></img>
-                <p>Portfolio Item 1</p>
-            </div>
-            <div>
-                <img src="Gear.svg" alt="React" class="PM skills grid-item" style="background-color: #ddd;"></img>
-                <p>Portfolio Item 1</p>
-            </div>
+    <section id="portfolio">
+        <div class="content">
+            <h1>Portfolio:</h1>
+            <p>
+                The projects below are all pulled directly off of my <a href="https://github.com/PatTheNoble">github page</a> using the Github Rest API. 
+                You can find the code <a href="https://github.com/PatTheNoble/PatTheNoble.github.io">here:</a>
+            </p>
         </div>
+        <!-- 
+            Portfolio items are inserted here through JS.
+        -->
     </section>
 
 
 
-    <script>
-        function myFunction(message) {
-            alert(message);
-        }
-        
+    <script type="module">
+        import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
         /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
         /*
         var prevScrollpos = window.pageYOffset;
@@ -123,6 +121,62 @@
             prevScrollpos = currentScrollPos;
         }
         */
+        async function getRepos() {
+            const octokit = new Octokit({ auth: "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" });
+
+            // const response2 = await octokit.request('GET /repos/{owner}/{repo}/community/profile', {
+            //     owner: 'PatTheNoble',
+            //     repo: 'PatTheNoble'
+            // });
+            // console.log(response2);
+
+            // const requestCurrentFile = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+            //     owner: 'PatTheNoble',
+            //     repo: 'to-do-list',
+            //     path: 'README.md'
+            // });
+            // console.log(requestCurrentFile);
+
+            const response = await octokit.request('GET /user/repos');
+            console.log(response.data);
+
+            const portfolioList = document.createElement("div");
+            portfolioList.classList.add("portfolio-container");
+            document.getElementById("portfolio").appendChild(portfolioList);
+            for(var i = 0; i < response.data.length; i++)
+            {
+                var currentName = response.data[i].name;
+
+                var textnode = document.createElement("div");
+                var portfolioTitle = document.createElement("h1");
+                portfolioTitle.innerText = currentName;
+                //textnode.classList.add("game");
+                try{
+                    await octokit.request('GET /user/starred/{owner}/{repo}', {
+                        owner: 'PatTheNoble',
+                        repo: currentName
+                    })
+                    try {
+                        const readMeRespose = await octokit.request('GET /repos/{owner}/{repo}/readme', {
+                            accept: "application/vnd.github.v3.raw",
+                            owner: 'PatTheNoble',
+                            repo: currentName
+                        });
+                        //console.log( atob(readMeRespose.data.content));
+                        textnode.innerHTML = atob(readMeRespose.data.content); //atob function decodes the base64 encoding.
+                        portfolioList.appendChild(textnode);
+                        textnode.prepend(portfolioTitle);
+                    } 
+                    catch(err) {
+                        console.log(err);
+                    }
+                }
+                catch(err) {
+                    console.log(currentName, " was not starred and will not be included.");
+                }
+            }
+        }
+        getRepos();
     </script>
 </body>
 
