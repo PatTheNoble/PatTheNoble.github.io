@@ -123,34 +123,18 @@
         */
         async function getRepos() {
             const octokit = new Octokit({ auth: "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" });
+            const responseRepos = await octokit.request('GET /user/repos');
+            console.log(responseRepos.data);
 
-            // const response2 = await octokit.request('GET /repos/{owner}/{repo}/community/profile', {
-            //     owner: 'PatTheNoble',
-            //     repo: 'PatTheNoble'
-            // });
-            // console.log(response2);
-
-            // const requestCurrentFile = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
-            //     owner: 'PatTheNoble',
-            //     repo: 'to-do-list',
-            //     path: 'README.md'
-            // });
-            // console.log(requestCurrentFile);
-
-            const response = await octokit.request('GET /user/repos');
-            console.log(response.data);
-
+            // CREATE PORTFOLIO LIST
             const portfolioList = document.createElement("div");
             portfolioList.classList.add("portfolio-container");
             document.getElementById("portfolio").appendChild(portfolioList);
-            for(var i = 0; i < response.data.length; i++)
+            
+            for(var i = 0; i < responseRepos.data.length; i++)
             {
-                var currentName = response.data[i].name;
+                var currentName = responseRepos.data[i].name;
 
-                var textnode = document.createElement("div");
-                var portfolioTitle = document.createElement("h1");
-                portfolioTitle.innerText = currentName;
-                //textnode.classList.add("game");
                 try{
                     await octokit.request('GET /user/starred/{owner}/{repo}', {
                         owner: 'PatTheNoble',
@@ -162,10 +146,15 @@
                             owner: 'PatTheNoble',
                             repo: currentName
                         });
-                        //console.log( atob(readMeRespose.data.content));
-                        textnode.innerHTML = atob(readMeRespose.data.content); //atob function decodes the base64 encoding.
-                        portfolioList.appendChild(textnode);
-                        textnode.prepend(portfolioTitle);
+                        // HANDLE GITHUB CONTENT
+                        var githubContent = document.createElement("div");
+                        githubContent.innerHTML = atob(readMeRespose.data.content); //atob function decodes the base64 encoding.
+                        portfolioList.appendChild(githubContent);
+                        
+                        // HANDLE TITLE
+                        var portfolioTitle = document.createElement("h1");
+                        portfolioTitle.innerText = currentName;
+                        githubContent.prepend(portfolioTitle);
                     } 
                     catch(err) {
                         console.log(err);
