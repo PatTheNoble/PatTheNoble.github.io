@@ -122,7 +122,9 @@
         }
         */
         async function getRepos() {
-            const octokit = new Octokit({ auth: "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" });
+            const octokit = await fetch("https://enigmatic-cove-66469.herokuapp.com/octokit",{
+                
+            }); /*new Octokit({ auth: "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" });*/
             const responseRepos = await octokit.request('GET /user/repos');
             console.log(responseRepos.data);
 
