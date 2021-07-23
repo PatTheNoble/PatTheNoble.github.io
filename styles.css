@@ -284,14 +284,16 @@ body {
     padding: 0px;
     /*border: 2px solid #ddd;*/
     overflow-y: scroll;
-    background-color: #f2f2f2;
+    background-color: #fafafa;
     box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.10), 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.10);
+    border-radius: 5px;
 }
 
 .portfolio-container h1:first-of-type {
     margin: 0px auto !important;
     text-align: center !important;
     background-color: blanchedalmond;
+    color: rgb(65, 65, 65);
 }
 
 .PM h1 {
