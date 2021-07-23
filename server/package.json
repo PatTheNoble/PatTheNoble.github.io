@@ -11,9 +11,11 @@
     "test": "node test.js"
   },
   "dependencies": {
+    "@octokit/rest": "^18.7.0",
     "ejs": "^3.1.5",
     "express": "^4.15.2"
   },
+  "type": "module",
   "devDependencies": {
     "got": "^11.3.0",
     "tape": "^4.7.0"
