@@ -103,14 +103,7 @@
             </p>
         </div>
         <!-- 
-            Portfolio items are inserted here through JS in a format like so:
-            <div class="portfolio-container">
-                <div>
-                    <h1>Title</h1>
-                    <p>This is the repo content...</p>
-                </div>
-                ...
-            </div>
+            Portfolio items are inserted here through JS
         -->
 
     </section>
@@ -153,9 +146,6 @@
                 // HANDLE TITLE
                 var portfolioTitle = document.createElement("h1");
                 portfolioTitle.innerText = currentName;
-                // var githubLink = document.createElement("button");
-                // githubLink.innerText = "Github";
-                // portfolioTitle.append(githubLink);
                 githubContent.prepend(portfolioTitle);
 
                 // ADD TAGS
@@ -167,7 +157,6 @@
                     if(currentTagStr === "portfolio"){
                         continue;
                     }
-
                     var currentTag = document.createElement("div");
                     currentTag.innerText = currentTagStr;
                     tagsContainer.append(currentTag);

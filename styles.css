@@ -282,7 +282,7 @@ body {
     width: 100%;
     max-width: 750px;
     height: 650px;
-    margin-block: 25px;
+    margin-block: 50px;
 }
 .portfolio-item {
     width: 100%; max-width: 600px;
@@ -314,13 +314,15 @@ body {
 }
 .tags > *{
     border-radius: 5px;
-    border-bottom: 2px solid #f2f2f2;
     margin-right: 10px;
+    margin-bottom: 5px;
     font-size: 22px;
     padding: 20px;
     text-align: center;
-    background-color:crimson;
-    color: white;
+    background-color:#f2f2f2;
+    color: rgb(64, 64, 64);
+    /*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.1);*/
+    border: 2px solid #ddd;
 }
 button {
     background-color: DodgerBlue;
