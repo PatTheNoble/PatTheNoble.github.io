@@ -273,14 +273,21 @@ body {
 
 .portfolio-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
+    border-left: unset;
 }
-
-.portfolio-container>* {
-    width: 500px;
-    height: 500px;
-    margin: 25px auto;
+.github-content{
+    width: 100%;
+    max-width: 750px;
+    height: 650px;
+    margin-block: 25px;
+}
+.portfolio-item {
+    width: 100%; max-width: 600px;
+    height: 100%;
+    /*margin: 25px auto;*/
     padding: 0px;
     /*border: 2px solid #ddd;*/
     overflow-y: scroll;
@@ -292,8 +299,39 @@ body {
 .portfolio-container h1:first-of-type {
     margin: 0px auto !important;
     text-align: center !important;
-    background-color: blanchedalmond;
     color: rgb(65, 65, 65);
+    border-bottom: unset;
+    height: 50px;
+}
+.portfolio-container a{
+    color: rgb(65, 65, 65);
+    text-decoration:none
+}
+.tags{
+    overflow-x: visible;
+    width: 150px;
+    float: left;
+}
+.tags > *{
+    border-radius: 5px;
+    border-bottom: 2px solid #f2f2f2;
+    margin-right: 10px;
+    font-size: 22px;
+    padding: 20px;
+    text-align: center;
+    background-color:crimson;
+    color: white;
+}
+button {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    height: 100%;
+    float: right;
+    background-image: url("/Github.svg");
+
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .PM h1 {
