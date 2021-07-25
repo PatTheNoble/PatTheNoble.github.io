@@ -17,8 +17,7 @@
         <span class="PM"><a href="#about">About</a></span>
         <span class="PM"><a href="#tech-stack">Skills</a></span>
         <span class="PM"><a href="#portfolio">Portfolio</a></span>
-        <span class="PM hamburger"><a href="#home"><img src="Hamburger.svg" alt="Hamburger"
-                    style="width: 25px;"></a></span>
+        <span class="PM hamburger"><a href="#home"><img src="Hamburger.svg" alt="Hamburger" style="width: 25px;"></a></span>
     </nav>
 
     <aside class="left-bar">
@@ -37,7 +36,7 @@
 
 
     <section id="home" class="content">
-        <img src="Patrick2.jpg" alt="Picture of me" class="profile" onclick=getRepos()>
+        <img src="Patrick2.jpg" alt="Picture of me" class="profile" onclick=fetchAndDisplayRepos()>
     </section>
 
     <section id="about" class="content">
@@ -97,11 +96,12 @@
         <div class="content" style="position: relative;">
             <h1>Portfolio:</h1>
             <p>
-                The projects below are all pulled directly off of my <a href="https://github.com/PatTheNoble">github
-                    page</a> using the Github Rest API.
-                You can find the code <a href="https://github.com/PatTheNoble/PatTheNoble.github.io">here:</a>
+                Below you will find a list of my projects.
+                They are all pulled directly off of my github page using the Github Rest API.
             </p>
         </div>
+        <br><br><br><br>
+        <div id="loader"></div>
         <!-- 
             Portfolio items are inserted here through JS
         -->
@@ -113,12 +113,14 @@
     <script type="module">
         import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
 
-        async function getRepos() {
+        async function fetchAndDisplayRepos() {
             // FETCH DATA
             const githubDataRes = await fetch("https://enigmatic-cove-66469.herokuapp.com/github-data");
             const githubData = await githubDataRes.json();
             const repos = githubData.data.repos;
             const readMes = githubData.data.readMes;
+
+            console.log(repos);
 
             // CREATE PORTFOLIO LIST
             const portfolioList = document.createElement("div");
@@ -160,11 +162,18 @@
                     var currentTag = document.createElement("div");
                     currentTag.innerText = currentTagStr;
                     tagsContainer.append(currentTag);
-                    console.log(currentTagStr);
                 }
+
+                // ADD GITHUB LINK
+                var link = repos.data[i].html_url;
+                var githubLink = document.createElement("div"); githubLink.className = "github-link"; githubLink.onclick = (e)=>{window.open(e.target.alt,'_blank')}; tagsContainer.prepend(githubLink);
+                var githubImage = document.createElement("img"); githubImage.alt = link; githubImage.src = "Github.svg"; githubLink.appendChild(githubImage);
+
+                // REMOVE LOADING SYMBOL
+                var loader = document.getElementById("loader"); loader.style = "display: none;";
             }
         }
-        getRepos();
+        fetchAndDisplayRepos();
     </script>
 </body>
 
