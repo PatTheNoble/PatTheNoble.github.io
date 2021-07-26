@@ -50,7 +50,7 @@
                 The dedication to work everyday independantly.
                 <br>The ability to self-teach new and challenging skills.
                 <br>The foresight to know which task to focus on next.
-                <br>The importance of rapid prototyping, and creating clean, re-usable code.
+                <br>The importance of writing clean, maintainable code.
             </p>
             <br>
             More about me:
@@ -59,7 +59,7 @@
                 <br>I have a twin brother and two dogs.
             </p>
             <br>
-            I am based in Brampton Ontario, Canada.
+            I am based in Ontario, Canada.
         </div>
     </section>
 
@@ -200,13 +200,13 @@
 
         /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
         function dropDown() {
-            document.getElementById("navbar").classList.toggle("show");
+            document.getElementById("navbar").classList.toggle("drop-down");
         }
 
         // Close the dropdown if the user clicks outside of it
         window.onclick = function (event) {
             if (!event.target.matches('#hamburger-image')) {
-                document.getElementById("navbar").classList.remove("show");
+                document.getElementById("navbar").classList.remove("drop-down");
             }
         }
     </script>

@@ -76,6 +76,7 @@ body {
     margin-right: 5vw;
 }
 nav {
+    width: 100%;
     margin: 0px auto;
     height: 60px;
     display: flex;
@@ -154,7 +155,7 @@ nav span:hover {
     width: 100%; max-width: 600px;
     height: 100%;
     padding: 0px;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     background-color: #fafafa;
     box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.10), 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.10);
     border-radius: 5px;
@@ -166,10 +167,10 @@ nav span:hover {
     z-index: 10; /* Make shadow appear over images */
     margin: 0px auto !important;
     color: rgb(65, 65, 65); background-color: #fafafa;
-    border-bottom: unset;
+    /*border-bottom: unset;*/
     height: 70px;
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.07), 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.07);
+    /*box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.07), 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.07);*/
 }
 .portfolio-container a{
     color: rgb(65, 65, 65);
@@ -177,7 +178,8 @@ nav span:hover {
 }
 .github-content{
     width: 100%;
-    height: 650px; max-width: 750px;
+    display: flex; flex-direction: row;
+    /*height: 650px; max-width: 750px;*/
     margin-top: 50px; margin-bottom: 50px;
 }
 .github-link:hover{
@@ -236,7 +238,7 @@ h2 {
     display: block !important;
 }
 .drop-down .hamburger{
-    margin-right: 0px;
+    margin-right: 0px !important;
 }
 .drop-down a{
     vertical-align: middle;
@@ -284,7 +286,11 @@ h2 {
     html, body{
         font-size: 15px !important;
     }
+    .github-content{
+        flex-direction: column;
+    }
     .tags{
+        width: unset;
         display: flex;
         flex-direction: row;
     }
