@@ -17,7 +17,8 @@
         <span class="PM"><a href="#about">About</a></span>
         <span class="PM"><a href="#tech-stack">Skills</a></span>
         <span class="PM"><a href="#portfolio">Portfolio</a></span>
-        <span class="PM hamburger"><a href="#home"><img src="images/Hamburger.svg" alt="Hamburger" style="width: 25px;"></a></span>
+        <span class="PM hamburger"><img id="hamburger-image" src="images/Hamburger.svg" alt="Hamburger" style="width: 25px;"
+                onclick="dropDown()"></span>
     </nav>
 
     <aside class="left-bar">
@@ -36,14 +37,29 @@
 
 
     <section id="home" class="content">
-        <img src="images/Patrick2.jpg" alt="Picture of me" class="profile" onclick=fetchAndDisplayRepos()>
+        <img src="images/Patrick2.jpg" alt="Picture of me" class="profile">
     </section>
 
     <section id="about" class="content">
         <h1>About: </h1>
         <div class="about">
-            I am Patrick Morris: Indie Game Developer, Web Developer, Artist, Programmer, Gamer. I am not your average
-            developer... Lorem Ipsum delore blablabla
+            I am Patrick Morris: Indie Game Developer | Web Developer | Artist | Programmer.
+            <br><br>
+            Being a self-taught Indie Game Developer, I have a wide variety of highly applicable skills:
+            <p class="indent">
+                The dedication to work everyday independantly.
+                <br>The ability to self-teach new and challenging skills.
+                <br>The foresight to know which task to focus on next.
+                <br>The importance of rapid prototyping, and creating clean, re-usable code.
+            </p>
+            <br>
+            More about me:
+            <p class="indent">
+                When I'm not coding, you can usually find me sipping a glass of tea, playing video games or watching anime.
+                <br>I have a twin brother and two dogs.
+            </p>
+            <br>
+            I am based in Brampton Ontario, Canada.
         </div>
     </section>
 
@@ -87,21 +103,23 @@
 
 
     <aside class="gear-container">
-        <img src="images/Gear.svg" alt="Gear" class="gear" style="left: 50px; top: -250px">
-        <img src="images/Gear.svg" alt="Gear" class="gear" style="right: -350px; top: -550px;">
-        <br><br><br><br><br><br><br><br>
+        <img src="images/Gear.svg" alt="Gear" class="gear" style="left: 50px; top: -700px">
+        <img src="images/Gear.svg" alt="Gear" class="gear" style="right: -350px; top: -950px;">
     </aside>
 
     <section id="portfolio">
         <div class="content" style="position: relative;">
-            <h1>Portfolio:</h1>
+            <h1>Portfolio:</h1>     
             <p>
                 Below you will find a list of my projects.
-                They are all pulled directly off of my github page using the Github Rest API.
+                They are all pulled directly from Github using the Github Rest API.
             </p>
+            <div style="position: relative;">
+                <div id="loader"></div>
+            </div>
         </div>
-        <br><br><br><br>
-        <div id="loader"></div>
+        <br><br><br><br><br><br>
+
         <!-- 
             Portfolio items are inserted here through JS
         -->
@@ -114,11 +132,15 @@
         import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
 
         async function fetchAndDisplayRepos() {
+
             // FETCH DATA
             const githubDataRes = await fetch("https://enigmatic-cove-66469.herokuapp.com/github-data");
             const githubData = await githubDataRes.json();
             const repos = githubData.data.repos;
             const readMes = githubData.data.readMes;
+
+            // REMOVE LOADING SYMBOL
+            var loader = document.getElementById("loader"); loader.style = "display: none;";
 
             console.log(repos);
 
@@ -152,11 +174,11 @@
 
                 // ADD TAGS
                 var tagsContainer = document.createElement("div");
-                tagsContainer.className = "tags"; //skills grid-container 
+                tagsContainer.className = "tags";
                 githubContentContainer.prepend(tagsContainer);
                 for (var j = 0; j < repos.data[i].topics.length; j++) {
                     var currentTagStr = repos.data[i].topics[j];
-                    if(currentTagStr === "portfolio"){
+                    if (currentTagStr === "portfolio") {
                         continue;
                     }
                     var currentTag = document.createElement("div");
@@ -166,14 +188,27 @@
 
                 // ADD GITHUB LINK
                 var link = repos.data[i].html_url;
-                var githubLink = document.createElement("div"); githubLink.className = "github-link"; githubLink.onclick = (e)=>{window.open(e.target.alt,'_blank')}; tagsContainer.prepend(githubLink);
+                var githubLink = document.createElement("div"); githubLink.className = "github-link"; githubLink.onclick = (e) => { window.open(e.target.alt, '_blank') }; tagsContainer.prepend(githubLink);
                 var githubImage = document.createElement("img"); githubImage.alt = link; githubImage.src = "images/Github.svg"; githubLink.appendChild(githubImage);
-
-                // REMOVE LOADING SYMBOL
-                var loader = document.getElementById("loader"); loader.style = "display: none;";
             }
         }
         fetchAndDisplayRepos();
+    </script>
+    
+    <script>
+        // DROPDOWN MENU IN NAV LOGIC
+
+        /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+        function dropDown() {
+            document.getElementById("navbar").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('#hamburger-image')) {
+                document.getElementById("navbar").classList.remove("show");
+            }
+        }
     </script>
 </body>
 
