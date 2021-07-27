@@ -12,6 +12,10 @@
 </head>
 
 <body>
+    <aside style="position: relative;">
+        <div class="door"></div>
+        <div class="door"></div>
+    </aside>
     <nav id="navbar" class="PM">
         <span class="PM"><a href="#home">Home</a></span>
         <span class="PM"><a href="#about">About</a></span>
@@ -110,7 +114,7 @@
     <section id="portfolio">
         <div class="content" style="position: relative;">
             <h1>Portfolio:</h1>     
-            <p>
+            <p class="about">
                 Below you will find a list of my projects.
                 They are all pulled directly from Github using the Github Rest API.
             </p>
@@ -202,7 +206,6 @@
         function dropDown() {
             document.getElementById("navbar").classList.toggle("drop-down");
         }
-
         // Close the dropdown if the user clicks outside of it
         window.onclick = function (event) {
             if (!event.target.matches('#hamburger-image')) {

@@ -1,7 +1,7 @@
 ![PatTheNoble-github-io](https://user-images.githubusercontent.com/38845006/127036663-c238120f-3615-42c5-bc80-10c825f95b47.png)
 <h1> My Personal Website </h1>
 <p>
-  <a href="https://crypto-app-netlify.netlify.app"> View it here </a>
+  <a href="https://PatTheNoble.github.io"> View it here </a>
 </p>
 
 
