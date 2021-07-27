@@ -2,7 +2,7 @@
     font-family: 'Times New Roman', Times, serif;
 }
 .door{
-    /*-webkit-animation: example 1.2s ease-out 1; /* Safari */
+    -webkit-animation: example 1.2s ease-out 1; -webkit-animation-fill-mode: forwards; /* Safari */
     animation: example 1.2s ease-in-out 1; animation-fill-mode: forwards;  
     top: 0;
     width: 100vw;
@@ -14,6 +14,7 @@
 }
 .door:nth-child(2)
 {
+    -webkit-animation: example2 1.2s ease-out 1; -webkit-animation-fill-mode: forwards; -webkit-animation-delay: 1.2s; /* Safari */
     animation: example2 1.2s ease-in-out 1; animation-fill-mode: forwards; animation-delay: 1.2s;
     background-color: #ddd;
     z-index: 200;
