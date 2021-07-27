@@ -2,8 +2,8 @@
     font-family: 'Times New Roman', Times, serif;
 }
 .door{
-    -webkit-animation: example 1.2s ease-out 1; -webkit-animation-fill-mode: forwards; /* Safari */
-    animation: example 1.2s ease-in-out 1; animation-fill-mode: forwards;  
+    -webkit-animation: Anim-Door-LR 1.2s ease-out 1; -webkit-animation-fill-mode: forwards; /* Safari */
+    animation: Anim-Door-LR 1.2s ease-in-out 1; animation-fill-mode: forwards;  
     top: 0;
     width: 100vw;
     height: 100vh;
@@ -14,8 +14,8 @@
 }
 .door:nth-child(2)
 {
-    -webkit-animation: example2 1.2s ease-out 1; -webkit-animation-fill-mode: forwards; -webkit-animation-delay: 1.2s; /* Safari */
-    animation: example2 1.2s ease-in-out 1; animation-fill-mode: forwards; animation-delay: 1.2s;
+    -webkit-animation: Anim-Door-RL 1.2s ease-out 1; -webkit-animation-fill-mode: forwards; -webkit-animation-delay: 1.2s; /* Safari */
+    animation: Anim-Door-RL 1.2s ease-in-out 1; animation-fill-mode: forwards; animation-delay: 1.2s;
     background-color: #ddd;
     z-index: 200;
 }
@@ -86,6 +86,7 @@ a{
     -webkit-filter: drop-shadow( 0px 0px 50px rgba(0, 0, 0, 0.15));
     filter: drop-shadow( 0px 0px 50px rgba(0, 0, 0, 0.15));
     width: 500px;
+    -webkit-animation-name: Anim-Rotate; -webkit-animation-timing-function: linear; -webkit-animation-duration: 15s; -webkit-animation-iteration-count: infinite; /* Safari */
     animation-name: Anim-Rotate; animation-timing-function: linear; animation-duration: 15s; animation-iteration-count: infinite;
 }
 .about{
@@ -118,10 +119,6 @@ nav span:hover {
 }
 .hamburger {
     visibility: hidden;
-}
-.grid-container *, .grid-container{
-    -webkit-animation: Anim-Spawn-From-Top 1.2s ease-out 1; /* Safari */
-    animation: Anim-Spawn-From-Top 1.2s ease-out 1;
 }
 .grid-container {
     display: flex; justify-content: center; flex-wrap: wrap;
@@ -257,17 +254,6 @@ h4{
     font-size: 22px !important;
 }
 
-@keyframes Anim-Spawn-From-Top {
-    0% {
-        opacity: 0.5;
-        transform: translate(0px, -90px);
-    }
-    100% {
-        transform: translate(0px, 0px);
-        opacity: 1;
-    }
-}
-
 @keyframes Anim-Rotate {
     0% {
         transform: rotate(0deg);
@@ -276,7 +262,7 @@ h4{
         transform: rotate(360deg);
     }
 }
-@keyframes example {
+@keyframes Anim-Door-LR {
     0% {
         visibility: visible;
         left: 0px;
@@ -291,7 +277,7 @@ h4{
         width: 0px;
     }
 }
-@keyframes example2 {
+@keyframes Anim-Door-RL {
     0% {
         visibility: visible;
         right: 0px;
