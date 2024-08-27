@@ -1,218 +1,64 @@
 <!DOCTYPE html>
-
-<html lang="en" class="PM">
-<title> Patrick Morris' Personal Page</title>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Personal Website</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="alternate icon" href="images/favicon.ico">
-    <link rel="mask-icon" href="images/favicon.svg" color="#ff8a01">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <aside style="position: relative;">
-        <div class="door"></div>
-        <div class="door"></div>
-    </aside>
-    <nav id="navbar" class="PM">
-        <span class="PM"><a href="#home">Home</a></span>
-        <span class="PM"><a href="#about">About</a></span>
-        <span class="PM"><a href="#tech-stack">Skills</a></span>
-        <span class="PM"><a href="#portfolio">Portfolio</a></span>
-        <span class="PM hamburger"><img id="hamburger-image" src="images/Hamburger.svg" alt="Hamburger" style="width: 25px;"
-                onclick="dropDown()"></span>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <aside class="left-bar">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </aside>
-    <aside class="gear-container">
-        <img src="images/Gear.svg" alt="Gear" class="gear" style="left: 150px; top: -250px;">
-    </aside>
-    <p class="name">
-        Patrick Morris
-    </p>
+    <header>
+        <div class="overlay">
+            <h1>Your Name</h1>
+            <p>Web Developer | Designer | Your Profession</p>
+        </div>
+        <div class="arrow-down"></div>
+    </header>
 
 
-    <section id="home" class="content">
-        <img src="images/Patrick2.jpg" alt="Picture of me" class="profile">
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>Hello! I'm Your Name, a passionate web developer and designer based in [Your Location]. I love creating clean, modern, and user-friendly websites.</p>
     </section>
 
-    <section id="about" class="content">
-        <h1>About: </h1>
-        <div class="about">
-            I am Patrick Morris: Indie Game Developer | Web Developer | Artist | Programmer.
-            <br><br>
-            Being a self-taught Indie Game Developer, I have a wide variety of highly applicable skills:
-            <p class="indent">
-                The dedication to work everyday independantly.
-                <br>The ability to self-teach new and challenging skills.
-                <br>The foresight to know which task to focus on next.
-                <br>The importance of writing clean, maintainable code.
-            </p>
-            <br>
-            More about me:
-            <p class="indent">
-                When I'm not coding, you can usually find me sipping a glass of tea, playing video games or watching anime.
-                <br>I have a twin brother and two dogs.
-            </p>
-            <br>
-            I am based in Ontario, Canada.
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project Title 1</h3>
+            <p>A brief description of your project. What technologies you used, what problem it solved, etc.</p>
+        </div>
+        <div class="project">
+            <h3>Project Title 2</h3>
+            <p>A brief description of your project. What technologies you used, what problem it solved, etc.</p>
         </div>
     </section>
 
-    <section id="tech-stack" class="content">
-        <h1>Tech Stack:</h1>
-        <div class="skills grid-container">
-            <div>
-                <img src="images/React.svg" alt="React" class="PM skills grid-item"></img>
-                <p>React</p>
-            </div>
-            <div>
-                <img src="images/CSS3.svg" alt="CSS3" class="PM skills grid-item"></img>
-                <p>CSS3</p>
-            </div>
-            <div>
-                <img src="images/HTML5.svg" alt="HTML5" class="PM skills grid-item"></img>
-                <p>HTML5</p>
-            </div>
-            <div>
-                <img src="images/Nextjs.svg" alt="Next.js" class="PM skills grid-item"></img>
-                <p>Next.js</p>
-            </div>
-            <div>
-                <img src="images/JQuery.svg" alt="JQuery" class="PM skills grid-item"></img>
-                <p>JQuery</p>
-            </div>
-            <div>
-                <img src="images/JS.svg" alt="Java Script" class="PM skills grid-item"></img>
-                <p>Java Script</p>
-            </div>
-            <div>
-                <img src="images/Git.svg" alt="Git" class="PM skills grid-item"></img>
-                <p>Git</p>
-            </div>
-            <div>
-                <img src="images/Github.svg" alt="Github" class="PM skills grid-item"></img>
-                <p>Github</p>
-            </div>
-        </div>
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <p>If you'd like to work together or just say hello, feel free to reach out!</p>
+        <ul>
+            <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></li>
+            <li>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></li>
+        </ul>
     </section>
 
-
-    <aside class="gear-container">
-        <img src="images/Gear.svg" alt="Gear" class="gear" style="left: 50px; top: -700px">
-        <img src="images/Gear.svg" alt="Gear" class="gear" style="right: -350px; top: -950px;">
-    </aside>
-
-    <section id="portfolio">
-        <div class="content" style="position: relative;">
-            <h1>Portfolio:</h1>     
-            <p class="about">
-                Below you will find a list of my projects.
-                They are all pulled directly from Github using the Github Rest API.
-            </p>
-            <div style="position: relative;">
-                <div id="loader"></div>
-            </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All Rights Reserved.</p>
         </div>
-        <br><br><br><br><br><br>
-
-        <!-- 
-            Portfolio items are inserted here through JS
-        -->
-
-    </section>
-
-
-
-    <script type="module">
-        import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
-
-        async function fetchAndDisplayRepos() {
-
-            // FETCH DATA
-            const githubDataRes = await fetch("https://enigmatic-cove-66469.herokuapp.com/github-data");
-            const githubData = await githubDataRes.json();
-            const repos = githubData.data.repos;
-            const readMes = githubData.data.readMes;
-
-            // REMOVE LOADING SYMBOL
-            var loader = document.getElementById("loader"); loader.style = "display: none;";
-
-            console.log(repos);
-
-            // CREATE PORTFOLIO LIST
-            const portfolioList = document.createElement("div");
-            portfolioList.className = "portfolio-container content";
-            document.getElementById("portfolio").appendChild(portfolioList);
-
-            // LOOP THROUGH REPOSISTORIES
-            for (var i = 0; i < repos.data.length; i++) {
-                var currentName = repos.data[i].name;
-
-                const currentTopics = repos.data[i].topics;
-                if (!currentTopics.includes("portfolio")) {
-                    continue;
-                }
-
-                // HANDLE GITHUB CONTENT
-                var githubContentContainer = document.createElement("div");
-                githubContentContainer.className = "github-content";
-                portfolioList.appendChild(githubContentContainer);
-                var githubContent = document.createElement("div");
-                githubContent.className = "portfolio-item";
-                githubContentContainer.appendChild(githubContent);
-                githubContent.innerHTML = atob(readMes[i].data.content); //atob function decodes the base64 encoding.
-
-                // HANDLE TITLE
-                var portfolioTitle = document.createElement("h1");
-                portfolioTitle.innerText = currentName;
-                githubContent.prepend(portfolioTitle);
-
-                // ADD TAGS
-                var tagsContainer = document.createElement("div");
-                tagsContainer.className = "tags";
-                githubContentContainer.prepend(tagsContainer);
-                for (var j = 0; j < repos.data[i].topics.length; j++) {
-                    var currentTagStr = repos.data[i].topics[j];
-                    if (currentTagStr === "portfolio") {
-                        continue;
-                    }
-                    var currentTag = document.createElement("div");
-                    currentTag.innerText = currentTagStr;
-                    tagsContainer.append(currentTag);
-                }
-
-                // ADD GITHUB LINK
-                var link = repos.data[i].html_url;
-                var githubLink = document.createElement("div"); githubLink.className = "github-link"; githubLink.onclick = (e) => { window.open(e.target.alt, '_blank') }; tagsContainer.prepend(githubLink);
-                var githubImage = document.createElement("img"); githubImage.alt = link; githubImage.src = "images/Github.svg"; githubLink.appendChild(githubImage);
-            }
-        }
-        fetchAndDisplayRepos();
-    </script>
-    
-    <script>
-        // DROPDOWN MENU IN NAV LOGIC
-
-        /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
-        function dropDown() {
-            document.getElementById("navbar").classList.toggle("drop-down");
-        }
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function (event) {
-            if (!event.target.matches('#hamburger-image')) {
-                document.getElementById("navbar").classList.remove("drop-down");
-            }
-        }
-    </script>
+    </footer>
 </body>
-
 </html>
