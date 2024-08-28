@@ -9,6 +9,7 @@ body {
 }
 
 .container {
+    max-width: 800px;
     width: 80%;
     margin: auto;
     overflow: hidden;
@@ -18,7 +19,7 @@ body {
 header {
     position: relative;
     width: 100%;
-    height: 90vh; /* Full viewport height */
+    height: 90vh;
     background: url('images/Fantasy.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
@@ -84,6 +85,42 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #f4f4f4;
+}
+
+/* Project Styles */
+.project {
+    background: #fff;
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+}
+
+.project-info {
+    padding: 15px;
+}
+
+.project h3 {
+    margin: 0;
+}
+
+.project p {
+    margin: 10px 0 0;
+}
+
+.project:hover {
+    transform: scale(1.01);
 }
 
 /* Section Styles */

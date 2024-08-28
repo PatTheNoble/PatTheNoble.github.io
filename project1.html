@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title 1 | Your Name</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="project-header">
+        <div class="container">
+            <h1>Character Creation Project</h1>
+            <p>Fully customize the appearance of your own character</p>
+        </div>
+    </header>
+
+    <section class="project-details container">
+        <img src="project1-image-large.jpg" alt="Project 1" class="project-image">
+
+        <br/> <br/>  <br/>  <br/>
+
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>C++</li>
+            <li>Python</li>
+            <li>Unreal Engine</li>
+            <li>Houdini</li>
+            <li>Slate UI</li>
+        </ul>
+
+        <h2>Problems Solved: </h2>
+            <br/> 
+
+        <h3>Enabling Character Blending Programmatically - Character Feature Morphing</h3>
+        <p>
+            The character morphing technology is enabled through the use of "morph targets", or "blendshapes" which required geometry with the same number of vertices. 
+            This assumption allows each vertex to be interpolated to its target based on the desired blend weight and chosen morph targets, enabling faces to be blended programmatically. 
+        </p> 
+        <br/><br/>
+
+
+        <h3>How to Expose Customization to the End User? - Dynamic User Interface</h3>
+        <p>
+            Typically for this type of system a user interface option would have to be exposed for each option, and the blendshape "key" would have to be linked manually.
+        </p>
+        <p>
+            However, in our system a user interface is instantiated at runtime by doing a single loop for all blendshapes, and creating a slider which is linked with the current blendshape. 
+            This allows the end user to customize their character, while also greatly improving pipeline efficiency. Artists can add features to the character without ever needing to  
+            extend the user interface. 
+        </p>
+        <br/><br/>
+
+        <h3>Making the Most Powerful Customization System - Procedural Feature Extraction</h3>
+        <p>
+            It is a challenge on the artist side to create and export so many options for the system. For example, different feature groups such as lips, noses, eyes, etc while keeping them consistent.
+            
+            Our solution solves this problem procedurally by allowing the artist focus solely on the face as a whole, our system extracts all those features and enabled blending of any features from any face together.
+        </p>
+        <p>
+            Although morphing will technically work with the same vertex count, if the features of the face are in different places then the result becomes unusable, so the system needed to match the average location
+            of the features every time it adds a blend shape.
+        </p>
+        <br/><br/>
+
+        <h2>Project Summary</h2>
+        <ul>
+            <li>Morph Targets System</li>
+                <ul>Enables customization of characters by interpolating the geometry</ul>
+                <br/>  
+            <li>Dynamic User Interface</li>
+                <ul>Exposes all features to the end user at runtime</ul>
+                <ul>Dynamic nature vastly improves pipeline efficiency</ul>
+                <br/>
+            <li>Automatic Feature Matching</li>
+                <ul>Solves the problem for artists having to create each feature separately by matching features procedurally</ul>
+        </ul>
+        <br/>  <br/>
+
+
+        <a href="index.html#projects" class="btn">Back to Portfolio</a>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
