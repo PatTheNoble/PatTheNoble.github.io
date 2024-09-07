@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Manager | Your Name</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <header class="header-container">
+        <img src="images/unit_manager/unit_manager_5.webp" alt="Banner Image" class="image-banner">
+        <div class="header-content">
+            <h1>Unit Manager</h1>
+            <p>An efficient system for handling complex game AI in Unreal Engine 5</p>
+        </div>
+    </header>
+
+    <section class="project-details container">
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>C++</li>
+            <li>Unreal Engine 5</li>
+            <li>Custom AI System</li>
+            <li>Custom Avoidance System</li>
+            <li>Multithreading</li>
+            <li>Tick Aggregation</li>
+            <li>Entity Component Systems</li>
+        </ul>
+
+        <h3>Problem: Unreal Engine’s AI and Movement Components Are Expensive</h3>
+        <p>
+            Unreal Engine’s default character and movement components are designed for high-quality player interactions, but they come with a high computational cost. In our case, the system could only handle about 10 characters simultaneously before suffering performance issues. This was a significant limitation, as our game wanted to support 100+ AI enemies interacting in real-time.
+        </p>
+
+        <h3>Solution: Custom Unit Manager (10x Performance Boost)</h3>
+        <p>
+            To address this, we developed a custom Unit Manager designed to efficiently handle a large number of AI entities. By optimizing how AI behavior is managed and offloading expensive movement calculations, we increased the system’s capacity by over 1000%, allowing the game to manage over 100 AI enemies at once with minimal impact on performance.
+        </p>
+
+        <h3>Multithreading and Tick Aggregation</h3>
+        <p>
+            Multithreading was a crucial part of the solution, allowing us to spread the computational load of AI decision-making across multiple CPU cores. We also implemented tick aggregation, which groups AI updates into batches, significantly reducing the overhead of individual entity updates. These optimizations further contributed to the performance gains.
+        </p>
+
+        <h3>Entity Component System (ECS) Architecture</h3>
+        <p>
+            To ensure scalability, we shifted to an Entity Component System (ECS) architecture. This allowed us to decouple AI behaviors from the Unreal Engine character framework, reducing the complexity and cost of managing AI entities. 
+            This shift allowed for more efficient data organization, especially by grouping similar components together in contiguous memory blocks.
+            As a result, we achieved better cache coherence, meaning that data accessed by the CPU could be retrieved more quickly from memory, significantly reducing cache misses. This optimization led to faster AI updates and improved scalability, making it possible to handle a large number of entities with minimal performance impact.
+        </p>
+
+        <h2>Project Summary</h2>
+        <ul>
+            <li>10x Performance Improvement</li>
+                <ul>Enhanced the system to handle over 100 AI enemies simultaneously, compared to the original 10</ul>
+                <br/>  
+            <li>Multithreading & Tick Aggregation</li>
+                <ul>Distributed AI processing across multiple cores and aggregated updates to improve efficiency</ul>
+                <br/>
+            <li>Custom Avoidance System</li>
+                <ul>Ensures smooth navigation and collision avoidance for large groups of AI</ul>
+                <br/>
+            <li>Entity Component System (ECS)</li>
+                <ul>Decoupled AI logic from Unreal’s default character system for better scalability</ul>
+        </ul>
+
+        <a href="index.html#projects" class="btn">Back to Portfolio</a>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

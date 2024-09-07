@@ -3,78 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Personal Website</title>
+    <title>Patrick Morris | Personal Website</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="components.js" defer></script>
-</head>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head> 
 <body>
     
-    <div id="navbar-placeholder"></div>
-    <!-- <nav>
+    <nav>
         <div class="container">
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
-    </nav> -->
-
-    <div id="banner-placeholder"></div>
-
-    <!-- <header>
-        <div class="overlay">
-            <h1>Your Name</h1>
-            <p>Web Developer | Designer | Your Profession</p>
+    </nav>    
+    
+    <header class="header-container">
+        <img src="images/fantasy_highres.jpg" alt="Banner Image" class="image-banner">
+        <div class="header-content">
+            <h1>Patrick Morris</h1>
+            <p>Web Developer | Designer | Game Developer</p>
         </div>
         <div class="arrow-down"></div>
-    </header> -->
-
+    </header>
 
     <section id="about" class="container">
         <h2>About Me</h2>
-        <p>Hello! I'm Your Name, a passionate web developer and designer based in [Your Location]. I love creating clean, modern, and user-friendly websites.</p>
+        <p>Hello! I'm Patrick, a passionate web developer based in Ontario. I love creating clean, modern, and user-friendly website. I also enjoy creating immersive games with my free time.</p>
     </section>
 
     <section id="projects" class="container">
         <h2>Projects</h2>
         <div class="project">
             <a href="project1.html">
-                <img src="images/face_customizer.webp" alt="Project 1">
+                <img src="images/face_customizer.webp" alt="Project 1" loading="lazy">
                 <div class="project-info">
-                    <h3>Project Title 1</h3>
-                    <p>A brief description of your project. What technologies you used, what problem it solved, etc.</p>
+                    <h3>Face Customizer</h3>
+                    <p>Fully customize the appearance of your own character</p>
                 </div>
             </a>
         </div>
         <div class="project">
             <a href="project2.html">
-                <img src="images/Fantasy.jpg" alt="Project 2">
+                <img src="images/unit_manager/unit_manager_3.webp" alt="Project 2" loading="lazy">
                 <div class="project-info">
-                    <h3>Project Title 2</h3>
-                    <p>A brief description of your project. What technologies you used, what problem it solved, etc.</p>
+                    <h3>Unit Manager</h3>
+                    <p>An efficient system for handling game AI en masse</p>
                 </div>
             </a>
         </div>
-        <!-- Add more projects as needed -->
     </section>
 
     <section id="contact" class="container">
         <h2>Contact Me</h2>
         <p>If you'd like to work together or just say hello, feel free to reach out!</p>
-        <ul>
-            <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></li>
-            <li>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></li>
+        <ul> 
+            <li>
+                <a href="mailto:Patrick.Francis.Morris@gmail.com">
+                    <img src="icons/email.svg" alt="Email" width="24" height="24">
+                    Email
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/patrick-francis-morris/" target="_blank">
+                    <img src="icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    LinkedIn
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/PatTheNoble" target="_blank">
+                    <img src="icons/github.svg" alt="GitHub" width="24" height="24">
+                    GitHub
+                </a>
+            </li>
         </ul>
     </section>
+    
+    
 
-    <div id="footer-placeholder"></div>
-    <!-- <footer>
+    <footer>
         <div class="container">
-            <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+            <p>&copy; 2024 Patrick Morris. All Rights Reserved.</p>
         </div>
-    </footer> -->
+    </footer>
 </body>
 </html>
