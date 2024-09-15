@@ -37,41 +37,47 @@
 
         <h3>Problem: Unreal Engine’s AI and Movement Components Are Expensive</h3>
         <p>
-            Unreal Engine’s default character and movement components are designed for high-quality player interactions, but they come with a high computational cost. In our case, the system could only handle about 10 characters simultaneously before suffering performance issues. This was a significant limitation, as our game wanted to support 100+ AI enemies interacting in real-time.
+            Unreal Engine’s default character and movement components are designed for high-quality player interactions, but they come with a high computational cost. 
+            In our case, the system could only handle about 10 characters simultaneously on low end devices. 
+            This was a significant limitation, as our game wanted to support 100+ AI enemies interacting in real-time.
         </p>
 
-        <h3>Solution: Custom Unit Manager (10x Performance Boost)</h3>
+        <h3>Solution: Custom Unit Manager</h3>
         <p>
-            To address this, we developed a custom Unit Manager designed to efficiently handle a large number of AI entities. By optimizing how AI behavior is managed and offloading expensive movement calculations, we increased the system’s capacity by over 1000%, allowing the game to manage over 100 AI enemies at once with minimal impact on performance.
+            To address this, we developed a custom Unit Manager designed to efficiently handle a large number of AI entities. 
+            By optimizing how AI behavior is managed and offloading expensive calculations, we vastly increased the system’s capacity, allowing the game to manage over 100 AI enemies at once with minimal impact on performance.
         </p>
 
         <h3>Multithreading and Tick Aggregation</h3>
-        <p>
-            Multithreading was a crucial part of the solution, allowing us to spread the computational load of AI decision-making across multiple CPU cores. We also implemented tick aggregation, which groups AI updates into batches, significantly reducing the overhead of individual entity updates. These optimizations further contributed to the performance gains.
-        </p>
-
-        <h3>Entity Component System (ECS) Architecture</h3>
-        <p>
-            To ensure scalability, we shifted to an Entity Component System (ECS) architecture. This allowed us to decouple AI behaviors from the Unreal Engine character framework, reducing the complexity and cost of managing AI entities. 
-            This shift allowed for more efficient data organization, especially by grouping similar components together in contiguous memory blocks.
-            As a result, we achieved better cache coherence, meaning that data accessed by the CPU could be retrieved more quickly from memory, significantly reducing cache misses. This optimization led to faster AI updates and improved scalability, making it possible to handle a large number of entities with minimal performance impact.
-        </p>
-
-        <h2>Project Summary</h2>
+        <p> Optimizations include: </p>
         <ul>
-            <li>10x Performance Improvement</li>
-                <ul>Enhanced the system to handle over 100 AI enemies simultaneously, compared to the original 10</ul>
-                <br/>  
-            <li>Multithreading & Tick Aggregation</li>
-                <ul>Distributed AI processing across multiple cores and aggregated updates to improve efficiency</ul>
-                <br/>
-            <li>Custom Avoidance System</li>
-                <ul>Ensures smooth navigation and collision avoidance for large groups of AI</ul>
-                <br/>
-            <li>Entity Component System (ECS)</li>
-                <ul>Decoupled AI logic from Unreal’s default character system for better scalability</ul>
+            <li> Offloading units from the game thread when they are not gameplay relevant </li>
+            <li> Handling every unit's behavior from a single system's tick to reduce overhead </li>
         </ul>
 
+        <h3>Avoidance Algorithm</h3>
+        <!-- <li> Movement uses a single line trace.</li>
+        <li> 
+            Avoidance is handled using a custom grid system. 
+            Units only avoid other units in the same grid to avoid n^2 cost of avoiding every other unit.
+            World location is converted into a key to access the current cell of the unit.
+        </li> -->
+        <li> 
+            Problem: The cost of Avoidance is n^2 as all units must avoid eachother
+        </li>
+        <li>
+            To optimize this we used a 3D array "grid" to partition the units into smaller groups based on their location
+        </li>
+        <li>
+            Each index in the 3D array represents a world location range, to convert the unit location to a grid cell we divide their location by the cell size
+        </li>        
+        <li>
+            Units only avoid other units in the same grid cell, greatly reducing the exponential cost of avoidance
+        </li>
+
+        <img src="images/unit_manager/unit_manager_2.webp" alt="Avoidance Gif" class="responsive-img" loading="lazy">
+
+        <br/>
         <a href="index.html#projects" class="btn">Back to Portfolio</a>
     </section>
 
